@@ -1,0 +1,10 @@
+<h1>{{ produit.titre }}</h1>
+
+<img src="{{ imageUrl }}" alt="{{ produit.titre }}" style="max-height: 600px; max-width: 600px;">
+
+<h3>{{ produit.prix }} €</h3>
+
+<p>{{ produit.description }}</p>
+
+<!-- ajouter méthode dans ViewProduitsComponent pour lien avec microservices Commande/Paiement -->
+<button class="btn btn-success">Commander</button>
