@@ -12,10 +12,10 @@ export class ProduitService {
   }
 
   getProduits(): Observable<any> {
-    return this.http.get<any>('http://localhost:8080/produits')
+    return this.http.get<any>('http://localhost:4200/produits')
   }
 
   getProduitById(id:number): Observable<Produit> {
-    return this.http.get<Produit>('http://localhost:8080/produits/'+id)
+    return this.http.get<Produit>('http://localhost:4200/produits/'+id)
   }
 }
