@@ -1,11 +1,11 @@
 <div class="card">
-  <img src="{{produit.image}}" class="card-img-top img-fluid " style="max-height: 200px" alt="...">
+  <img src="http://localhost:8080/images/{{produit.image}}" class="card-img-top img-fluid" style="max-height: 200px" alt="...">
   <div class="card-body">
     <h5 class="card-title">{{produit.titre}}</h5>
     <p class="card-text">{{produit.description}}</p>
     <div class="row ">
         <span class="col d-flex m-1 badge align-items-center justify-content-center text-bg-warning">{{produit.prix}}</span>
-        <a routerLink="/produit/{{produit.id}}" class="m-1 col btn btn-primary">View details</a>
+        <a routerLink="/produits/{{produit.id}}" class="m-1 col btn btn-primary">View details</a>
     </div>
   </div>
 </div>
