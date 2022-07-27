@@ -1,8 +1,7 @@
-package poei.orsys2.produit.dao;
+package poei.orsys2.commande.dao;
 
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 @RepositoryRestResource
-public interface ProduitRestRepo {
-
+public interface CommandeRestDAO {
 }
