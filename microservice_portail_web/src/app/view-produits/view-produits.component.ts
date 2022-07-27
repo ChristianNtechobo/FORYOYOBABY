@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 import { ProduitService } from "../services/produit.service";
 import { Produit } from "../model/produit";
+import {CommandeService} from "../services/commande.service";
 
 @Component({
   selector: 'app-view-produits',
@@ -15,7 +16,9 @@ export class ViewProduitsComponent implements OnInit {
 
   constructor(
     private produitService: ProduitService,
-    private activatedRoute: ActivatedRoute
+    private commandeService: CommandeService,
+    private activatedRoute: ActivatedRoute,
+    private router: Router
   ) {
   }
 
@@ -28,5 +31,22 @@ export class ViewProduitsComponent implements OnInit {
         this.imageUrl = `http://localhost:8080/images/${this.produit.image}`;
       })
     });
+  }
+
+  addCommande() {
+    const commande = {
+      "produit": {
+        "id": this.id,
+      },
+      "commandePayee": false,
+      "dateCommande": new Date(),
+      "quantite": 1
+    }
+
+    this.commandeService.addCommande(commande).subscribe(
+      response => {
+        this.router.navigate(['/payment'], { queryParams: { commandeId: response.id } })
+      }
+    )
   }
 }

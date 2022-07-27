@@ -6,5 +6,4 @@
 
 <p>{{ produit.description }}</p>
 
-<!-- ajouter méthode dans ViewProduitsComponent pour lien avec microservices Commande/Paiement -->
-<button class="btn btn-success">Commander</button>
+<button (click)="addCommande()" class="btn btn-success">Commander</button>
